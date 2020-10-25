@@ -1,0 +1,15 @@
+/**
+ * settings/_breackpoints.scss Breackpoints
+ *
+ * Write a description
+ */
+ 
+$breakpoints: (
+	'huge':(min-width: 2560px),
+	'xbig':(min-width: 1600px),
+	'big':(max-width: 1440px),
+	'xlarge': (max-width: 1366px),
+	'large': (max-width: 1024px),
+	'medium': (max-width: 768px),
+	'small': (max-width: 640px),
+);

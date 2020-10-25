@@ -1,0 +1,28 @@
+/**
+ * style.scss Style
+ *
+ * Write a description
+ */
+
+ /*
+ * INDEX
+ * - title
+ * - title
+ */
+
+// Import front-end-framework
+// Check latest version: https://github.com/chphsalvo/front-end-framework/releases
+@import "https://cdn.jsdelivr.net/gh/chphsalvo/front-end-framework@0.9.2/dist/css/style.min.css";
+@import "import/import";
+
+body{
+	/*background-color:color(black,base);*/ /*palette*/
+
+	/*
+	@include responsive ('small'){
+		body{
+			background:#000;
+		}
+	}
+	*/
+}
