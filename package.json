@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon -e scss -x 'npm run build:css && npm run build:cssmin'",
     "build:css": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1|postcss ./style.css -u autoprefixer -r",
-    "build:cssmin": "node-sass style.css style.min.css --source-map true --output-style compressed"
+    "build:cssmin": "node-sass style.css style.min.css --source-map true --output-style compressed",
+    "replace": "node replace-in-files.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,8 @@
     "Android >= 4",
     "Firefox >= 20",
     "iOS >= 8"
-  ]
+  ],
+  "dependencies": {
+    "replace-in-files": "^3.0.0"
+  }
 }

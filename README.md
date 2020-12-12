@@ -10,5 +10,8 @@
     <br>
     # Watch
     npm run watch
+    <br>
+    # Replace
+    npm run replace
   </code>
 </pre>
