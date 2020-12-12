@@ -8,7 +8,10 @@
     cd _s
     npm install
     <br>
-    # Watch
-    npm run watch // *to-do: edit to npm run dev
+    # Dev
+    npm run dev
+    <br>
+    # Build
+    npm run build
   </code>
 </pre>
