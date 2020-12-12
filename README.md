@@ -9,6 +9,6 @@
     npm install
     <br>
     # Watch
-    npm run watch
+    npm run watch // *to-do: edit to npm run dev
   </code>
 </pre>
