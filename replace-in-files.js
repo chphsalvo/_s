@@ -17,17 +17,8 @@ const options = {
     // Replacement
     //from: /foo/g,  // string or regex
     //to: 'bar', // string or fn  (fn: carrying last argument - path to replaced file)
-
-    // _s text domain
-    from: /'_s'/g,
-    to: 'my-theme-name',
-    // _s functions names
-    from: /_s_/g,
-    to: 'my_theme_name_',
-    // _s functions names
-    from: /Text Domain: _s/g,
-    to: 'Text Domain: my-theme-name',
-
+    from: ' ',
+    to: ' ',
 
     // See more: https://www.npmjs.com/package/glob
     optionsForFiles: { // default
@@ -60,8 +51,38 @@ async function main() {
             countOfMatchesByPaths,
             replaceInFilesOptions
         } = await replaceInFiles(options)
-            .pipe({ from: /theme-path/g, to: 'theme_path' })
-            .pipe({ from: /second/g, to: 'first' })
+            .pipe({
+                // 1. '_s' text domain
+                from: /'_s'/g,
+                to: 'my-theme-name'
+            })
+            .pipe({
+                // 2. _s_ functions names
+                from: /_s_/g,
+                to: 'my_theme_name_'
+            })
+            /*
+            .pipe({
+                // 3. Text Domain: _s
+                from: /Text Domain: _s/g,
+                to: 'Text Domain: my-theme-name'
+            })
+            */
+            .pipe({
+                // 4.  _s DocBlocks
+                from: / _s/g,
+                to: ' My_Theme_Name'
+            })
+            .pipe({
+                // 5. _s- prefixed handles
+                from: /_s-/g,
+                to: 'my-theme-name-'
+            })
+            .pipe({
+                // 6. _S_ constants
+                from: /_S_/g,
+                to: 'MY_THEME_NAME_'
+            })
         console.log('Modified files:', changedFiles);
         console.log('Count of matches by paths:', countOfMatchesByPaths);
         console.log('was called with:', replaceInFilesOptions);
